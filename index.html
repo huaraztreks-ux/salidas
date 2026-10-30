@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1f5f4a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Salidas">
+  <title>Salidas · Peruvian Andes Adventures</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Pantalla de ingreso -->
+  <section id="login" class="pantalla oculto">
+    <div class="login-caja">
+      <img src="icons/icon-192.png" alt="" class="login-logo">
+      <h1>Salidas</h1>
+      <p class="sub">Peruvian Andes Adventures</p>
+      <div id="login-form">
+        <label for="sel-rol">Selecciona tu puesto</label>
+        <select id="sel-rol">
+          <option value="">— Selecciona —</option>
+          <option value="guia">Guía</option>
+          <option value="cocinero">Cocinero</option>
+          <option value="chofer">Chofer</option>
+          <option value="asistente">Asistente</option>
+          <option value="arriero">Arriero</option>
+          <option value="admin">Administrador</option>
+        </select>
+        <label for="sel-trabajador">Nombre</label>
+        <select id="sel-trabajador" disabled></select>
+        <label for="inp-pin">Contraseña</label>
+        <input id="inp-pin" type="password" inputmode="numeric" maxlength="8" placeholder="••••">
+        <button id="btn-entrar" class="btn-principal">Entrar</button>
+        <p id="login-error" class="error"></p>
+      </div>
+      <div id="login-sin-datos" class="oculto">
+        <p>Para entrar la primera vez necesitas internet, porque la app tiene que descargar las salidas.</p>
+        <button id="btn-reintentar" class="btn-principal">Reintentar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- App principal -->
+  <section id="app" class="pantalla oculto">
+    <header class="cabecera">
+      <div>
+        <div id="usuario-nombre" class="usuario-nombre"></div>
+        <div id="usuario-rol" class="usuario-rol"></div>
+      </div>
+      <div class="cabecera-acciones">
+        <button id="btn-sync" class="btn-icono" aria-label="Actualizar">↻</button>
+        <button id="btn-menu" class="btn-icono" aria-label="Menú">⋮</button>
+      </div>
+    </header>
+    <div id="estado-sync" class="estado-sync"></div>
+
+    <div id="admin-barra" class="admin-barra oculto">
+      <label for="sel-ver-como">Ver salidas de:</label>
+      <select id="sel-ver-como"></select>
+      <a id="lnk-hoja" class="lnk-hoja oculto" target="_blank" rel="noopener">✎ Editar hoja</a>
+    </div>
+
+    <main id="contenido"></main>
+
+    <nav class="nav-inferior">
+      <button data-vista="lista" class="activo"><span>☰</span>Mis salidas</button>
+      <button data-vista="calendario"><span>▦</span>Calendario</button>
+    </nav>
+  </section>
+
+  <!-- Detalle de salida -->
+  <section id="detalle" class="detalle oculto">
+    <header class="cabecera">
+      <button id="btn-volver" class="btn-icono" aria-label="Volver">←</button>
+      <div id="detalle-titulo" class="detalle-titulo"></div>
+      <span></span>
+    </header>
+    <div id="detalle-contenido" class="detalle-contenido"></div>
+  </section>
+
+  <!-- Menú -->
+  <div id="menu" class="menu oculto">
+    <button id="btn-salir">Cerrar sesión</button>
+    <button id="btn-cerrar-menu">Cancelar</button>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="config.js"></script>
+  <script src="datos-ejemplo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "Salidas · Peruvian Andes Adventures",
+  "short_name": "Salidas",
+  "description": "Calendario de salidas para el equipo de Peruvian Andes Adventures",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1f5f4a",
+  "theme_color": "#1f5f4a",
+  "lang": "es",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
